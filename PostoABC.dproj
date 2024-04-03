@@ -104,6 +104,8 @@
         </DCCReference>
         <DCCReference Include="MVC\Classes\TTanque.pas"/>
         <DCCReference Include="MVC\Classes\UBomba.pas"/>
+        <DCCReference Include="MVC\Model\AbastecimentoModel.pas"/>
+        <DCCReference Include="MVC\Classes\Abastecimento.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
