@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/09/02 15:52:45.000.127,=C:\Users\DesenvolvimentoPc\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/01/11 13:13:19.000.912,=C:\Users\DesenvolvimentoPc\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/01/11 13:13:56.000.628,=C:\Users\DesenvolvimentoPc\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/04/03 14:44:49.000.363,=C:\Users\DesenvolvimentoPc\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/04/03 14:48:51.000.157,C:\Projetos\PostoABC\MVC\Dao\Unit1.pas=C:\Users\DesenvolvimentoPc\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/04/03 14:48:51.000.157,C:\Projetos\PostoABC\MVC\Dao\Unit1.dfm=C:\Users\DesenvolvimentoPc\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2024/04/03 14:49:04.000.659,C:\Projetos\PostoABC\PostoABC.dproj=C:\Users\DesenvolvimentoPc\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2024/04/03 14:51:40.852,C:\Projetos\PostoABC\MVC\View\UfrmPrincipal.dfm=C:\Projetos\PostoABC\MVC\View\Unit1.dfm</Transaction>
+    <Transaction>2024/04/03 14:51:40.852,C:\Projetos\PostoABC\MVC\View\UfrmPrincipal.pas=C:\Projetos\PostoABC\MVC\View\Unit1.pas</Transaction>
+    <Transaction>2024/04/03 16:01:44.249,=C:\Projetos\PostoABC\Unit1.pas</Transaction>
+    <Transaction>2024/04/03 16:17:23.315,C:\Projetos\PostoABC\MVC\Classes\TTanque.pas=C:\Projetos\PostoABC\Unit1.pas</Transaction>
+    <Transaction>2024/04/03 16:28:42.377,C:\Projetos\PostoABC\MVC\Classes\TTanque.pas=</Transaction>
+    <Transaction>2024/04/03 16:28:49.811,=C:\Projetos\PostoABC\MVC\Classes\Tanque.pas</Transaction>
+    <Transaction>2024/04/03 16:29:05.303,C:\Projetos\PostoABC\MVC\Classes\Tanque.pas=</Transaction>
+    <Transaction>2024/04/03 16:29:13.946,=C:\Projetos\PostoABC\MVC\Classes\TTanque.pas</Transaction>
+    <Transaction>2024/04/03 16:33:24.683,=C:\Projetos\PostoABC\Unit1.pas</Transaction>
+    <Transaction>2024/04/03 16:34:29.848,C:\Projetos\PostoABC\MVC\Classes\UBomba.pas=C:\Projetos\PostoABC\Unit1.pas</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5"/>
+	</ActiveMobileDevice>
+</BorlandProject>
