@@ -2,12 +2,14 @@ unit AbastecimentoModel;
 
 interface
 
-uses Abastecimento,DBXCommon, DBXFirebird, SqlExpr;
+uses Abastecimento,DBXCommon, DBXFirebird, SqlExpr,Data.DB, Datasnap.DBClient;
 
 type TAbastecimentoModel = class(TAbastecimento)
 
 public
-function Salvar:Boolean;
+ClientDataSet1: TClientDataSet;
+function Salvar(Abastecimento:Tabastecimento):Boolean;
+function Listar(Abastecimento:Tabastecimento):TclientDataset;
 
 end;
 
@@ -17,7 +19,7 @@ implementation
 
 { TAbastecimentoModel }
 
-function TAbastecimentoModel.Salvar: Boolean;
+function TAbastecimentoModel.Listar(Abastecimento:Tabastecimento): TclientDataset;
 var
   dbxconn: tdbxconnection;
   dbxcmd: tdbxcommand;
@@ -29,11 +31,36 @@ begin
       'SYSDBA', 'masterkey');
     dbxcmd := dbxconn.CreateCommand;
 
-      dbxcmd.Text :=
-        'select CODIGO_PRODUTO,ID_PRODUTO,NOME_PRODUTO,PRECO_PRODUTO,CUSTO_PRODUTO,QUANTIDADE,ICMS_PRODUTO,UNIDADE,'
-        + 'NCM,PIS,COFINS,SECAO,SITUACAOcc,BASECALCULO,CST,CFOP,CODIPI,BASESTMVA,ICMSST,ORIGEM,TOTALTRIBUTOS,VINCULO,STATUSVINCULO,CEST,PESO,PREC,TAMANHO,COR,preco_produto2,preco_produto3'
-        + ',preco_produto4,tipo,descp,fcp,reducao,conversao,codigofornecedor,servico,cbenef FROM PRODUTO where codigo_produto =' ;
+      dbxcmd.Text :='SELECT * FROM ABASTECIMENTO';
 
+
+    dbxreader := dbxcmd.ExecuteQuery;
+
+
+  finally
+    dbxconn.Free;
+    dbxcmd.Free;
+    dbxreader.Free;
+  end;
+
+
+
+end;
+
+function TAbastecimentoModel.Salvar(Abastecimento:Tabastecimento): Boolean;
+var
+  dbxconn: tdbxconnection;
+  dbxcmd: tdbxcommand;
+  dbxreader: tdbxreader;
+
+begin
+  try
+    dbxconn := tdbxconnectionfactory.GetConnectionFactory.GetConnection('ABC',
+      'SYSDBA', 'masterkey');
+    dbxcmd := dbxconn.CreateCommand;
+
+      dbxcmd.Text :='INSERT INTO ABASTECIMENTO (ID_BOMBA,VALOR,ICMS,LITROS,DATA)'+
+      'VALUES(:P)';
 
     dbxreader := dbxcmd.ExecuteQuery;
 

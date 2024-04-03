@@ -4,13 +4,14 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Data.DB,UfrmAbastecimento, Datasnap.DBClient;
 
 type
   TFrmPrincipal = class(TForm)
     menu: TMainMenu;
     Abastecimento1: TMenuItem;
     abastecimento2: TMenuItem;
+    procedure abastecimento2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -23,5 +24,16 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TFrmPrincipal.abastecimento2Click(Sender: TObject);
+begin
+try
+  frmAbastecimento:=  Tfrmabastecimento.Create(self);
+  FrmAbastecimento.ShowModal;
+finally
+   frmAbastecimento.free;
+end;
+
+end;
 
 end.

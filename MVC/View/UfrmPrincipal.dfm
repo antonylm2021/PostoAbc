@@ -2,7 +2,7 @@ object FrmPrincipal: TFrmPrincipal
   Left = 0
   Top = 0
   Caption = 'Sistema de Gerenciamento Posto ABC'
-  ClientHeight = 429
+  ClientHeight = 389
   ClientWidth = 735
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -12,6 +12,7 @@ object FrmPrincipal: TFrmPrincipal
   Font.Style = []
   Menu = menu
   OldCreateOrder = False
+  Position = poDesktopCenter
   PixelsPerInch = 96
   TextHeight = 13
   object menu: TMainMenu
@@ -19,6 +20,7 @@ object FrmPrincipal: TFrmPrincipal
     Top = 8
     object abastecimento2: TMenuItem
       Caption = 'Abastecimento'
+      OnClick = abastecimento2Click
     end
     object Abastecimento1: TMenuItem
       Caption = 'Relat'#243'rio'

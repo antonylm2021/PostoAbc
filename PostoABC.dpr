@@ -2,11 +2,12 @@ program PostoABC;
 
 uses
   Vcl.Forms,
-  UfrmPrincipal in 'MVC\View\UfrmPrincipal.pas' {FrmPrincipal},
-  TTanque in 'MVC\Classes\TTanque.pas',
-  UBomba in 'MVC\Classes\UBomba.pas',
   AbastecimentoModel in 'MVC\Model\AbastecimentoModel.pas',
-  Abastecimento in 'MVC\Classes\Abastecimento.pas';
+  Abastecimento in 'MVC\Classes\Abastecimento.pas',
+  Bomba in 'MVC\Classes\Bomba.pas',
+  Tanque in 'MVC\Classes\Tanque.pas',
+  UfrmAbastecimento in 'MVC\View\UfrmAbastecimento.pas' {FrmAbastecimento},
+  UfrmPrincipal in 'MVC\View\UfrmPrincipal.pas' {FrmPrincipal};
 
 {$R *.res}
 
