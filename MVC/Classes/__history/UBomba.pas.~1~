@@ -1,0 +1,10 @@
+unit UBomba;
+
+interface
+uses Tanque;
+
+type TBomba = class(
+
+implementation
+
+end.

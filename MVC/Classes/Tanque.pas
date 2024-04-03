@@ -1,0 +1,91 @@
+
+unit  Tanque;
+
+interface
+
+type TTanque = class
+
+private
+LId:Integer;
+LDescricao:string;
+LLitro:double;
+LDtCad:TDate;
+LDtAtu:TDate;
+
+public
+
+property Id:Integer read LId write LId;
+property Descricao:string read LDescricao write LDescricao;
+property Litros:double read LLitro write LLitro;
+property Dt:TDate read LDtCad write LDtCad;
+property Atu:Tdate read LDtAtu write LDtAtu;
+
+function GetId:Integer;
+function GetDescricao:string;
+function GetLitro:double;
+function GetData:TDate;
+function GetAtu:TDate;
+
+procedure SetId(Value:Integer);
+procedure SetDescricao(Value:string);
+procedure SetLitro(value:double);
+procedure SetData(value:TDate);
+procedure SetAtu(value:TDate);
+end;
+
+
+implementation
+
+{ TTanque }
+
+function TTanque.GetAtu: TDate;
+begin
+  Result:= LDtCad;
+end;
+
+function TTanque.GetData: TDate;
+begin
+  Result:= LDtAtu;
+end;
+
+function TTanque.GetDescricao: string;
+begin
+  Result:= LDescricao;
+end;
+
+function TTanque.GetId: Integer;
+begin
+  Result:= LId;
+end;
+
+function TTanque.GetLitro: double;
+begin
+  Result:= LLitro;
+end;
+
+procedure TTanque.SetAtu(value: TDate);
+begin
+  LDtAtu:= value;
+end;
+
+procedure TTanque.SetData(value: TDate);
+begin
+  LDtCad:= value;
+end;
+
+procedure TTanque.SetDescricao(Value: string);
+begin
+  LDescricao:= value;
+end;
+
+procedure TTanque.SetId(Value: Integer);
+begin
+  LId:= Value;
+end;
+
+procedure TTanque.SetLitro(value: double);
+begin
+  LLitro:= value;
+end;
+
+end.
