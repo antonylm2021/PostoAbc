@@ -7,7 +7,9 @@ uses
   Bomba in 'MVC\Classes\Bomba.pas',
   Tanque in 'MVC\Classes\Tanque.pas',
   UfrmAbastecimento in 'MVC\View\UfrmAbastecimento.pas' {FrmAbastecimento},
-  UfrmPrincipal in 'MVC\View\UfrmPrincipal.pas' {FrmPrincipal};
+  UfrmPrincipal in 'MVC\View\UfrmPrincipal.pas' {FrmPrincipal},
+  Conexao in 'MVC\Dao\Conexao.pas',
+  AbastecimentoController in 'MVC\Controller\AbastecimentoController.pas';
 
 {$R *.res}
 

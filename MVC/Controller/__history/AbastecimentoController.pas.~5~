@@ -1,0 +1,40 @@
+unit AbastecimentoController;
+
+interface
+
+uses Abastecimento,AbastecimentoModel;
+
+type TabastecimentoController = class
+
+public
+function Salvar(Abastecimento:TAbastecimento):Boolean;
+constructor create();
+var
+Model:TAbastecimentoModel;
+
+
+end;
+
+implementation
+
+{ TabastecimentoController }
+
+
+
+{ TabastecimentoController }
+
+constructor TabastecimentoController.create;
+begin
+  Model:= TAbastecimentoModel.create();
+end;
+
+function TabastecimentoController.Salvar(
+  Abastecimento: TAbastecimento): Boolean;
+begin
+
+end;
+
+{ TabastecimentoController }
+
+
+end.

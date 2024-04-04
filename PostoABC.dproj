@@ -113,6 +113,8 @@
             <Form>FrmPrincipal</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="MVC\Dao\Conexao.pas"/>
+        <DCCReference Include="MVC\Controller\AbastecimentoController.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

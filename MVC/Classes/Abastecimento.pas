@@ -12,12 +12,16 @@ private
 LValor:Currency;
 LIcms:Currency;
 LIdBomba:Integer;
+LTotalicms:Currency;
+LTotalGeral:Currency;
 
 public
 
 property Valor:Currency read LValor write LValor;
 property Icms:Currency read LIcms write LIcms;
 property IdBomba:Integer read LIdBomba write LIdbomba;
+property TotalIcms:Currency read LTotalicms write LTotalicms;
+property TotalGeral:Currency read LTotalGeral write LTotalGeral;
 
 function GetValor:Currency;
 function GetIcms:Currency;
@@ -25,6 +29,11 @@ function GetIdBomba:Integer;
 procedure SetValor(value:Currency);
 procedure SetIcms(value:Currency);
 procedure SetIdbomba(value:Integer);
+function GetTotalIcms:Currency;
+function GetTotalGeral:Currency;
+procedure SetTotalGeral(value:Currency);
+procedure SetTotalIcms(value:Currency);
+
 
 end;
 
@@ -42,6 +51,16 @@ begin
   Result:= LIdBomba;
 end;
 
+function TAbastecimento.GetTotalGeral: Currency;
+begin
+  Result:= LTotalGeral;
+end;
+
+function TAbastecimento.GetTotalIcms: Currency;
+begin
+  Result:= LTotalicms;
+end;
+
 function TAbastecimento.GetValor: Currency;
 begin
   Result:= LValor;
@@ -55,6 +74,16 @@ end;
 procedure TAbastecimento.SetIdbomba(value: Integer);
 begin
   LIdbomba:= Value;
+end;
+
+procedure TAbastecimento.SetTotalGeral(value: Currency);
+begin
+  LTotalGeral:= value;
+end;
+
+procedure TAbastecimento.SetTotalIcms(value: Currency);
+begin
+  LTotalicms:= value;
 end;
 
 procedure TAbastecimento.SetValor(value: Currency);

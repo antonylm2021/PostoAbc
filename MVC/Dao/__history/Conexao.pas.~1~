@@ -1,0 +1,12 @@
+unit Conexao;
+
+
+interface
+
+type tconexao = class
+
+end;
+
+implementation
+
+end.

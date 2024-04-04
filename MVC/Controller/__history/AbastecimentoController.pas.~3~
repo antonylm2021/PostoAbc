@@ -1,0 +1,13 @@
+unit AbastecimentoController;
+
+interface
+
+uses Abastecimento,AbastecimentoModel;
+
+type TabastecimentoController = class(TAbastecimentoModel)
+
+end;
+
+implementation
+
+end.

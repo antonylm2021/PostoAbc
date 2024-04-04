@@ -4,7 +4,12 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs,System.AnsiStrings, Vcl.ExtCtrls, Vcl.StdCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs,System.AnsiStrings, Vcl.ExtCtrls, Vcl.StdCtrls,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.UI.Intf,
+  FireDAC.Phys.Intf, FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async,
+  FireDAC.Phys, FireDAC.VCLUI.Wait, Data.DB, FireDAC.Comp.Client,
+  FireDAC.Phys.FB, FireDAC.Phys.FBDef, FireDAC.Stan.Param, FireDAC.DatS,
+  FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Comp.DataSet,AbastecimentoController;
 
 type
   TFrmAbastecimento = class(TForm)
@@ -36,6 +41,7 @@ type
     { Private declarations }
     valor,icms,total,totalicms,litro,totgeral:Currency;
     function Validar():Boolean;
+    function Salvar:Boolean;
   public
     { Public declarations }
   end;
@@ -47,6 +53,8 @@ implementation
 
 {$R *.dfm}
 
+uses Abastecimento;
+
 procedure TFrmAbastecimento.cbbombaChange(Sender: TObject);
 begin
   preencheDados();
@@ -55,7 +63,10 @@ end;
 procedure TFrmAbastecimento.edtlitroKeyPress(Sender: TObject; var Key: Char);
 begin
   if(Key=#13) then
-    Validar();
+    if Validar() then
+      ShowMessage('abastecimento Realizado Com sucesso')
+    else
+      ShowMessage('Erro ao abastecer');
 end;
 
 procedure TFrmAbastecimento.FormCreate(Sender: TObject);
@@ -71,6 +82,9 @@ end;
 procedure TFrmAbastecimento.Panel1Click(Sender: TObject);
 begin
   if Validar() then
+    ShowMessage('abastecimento Realizado Com sucesso')
+  else
+    ShowMessage('Erro ao abastecer');
 
 end;
 
@@ -80,6 +94,7 @@ begin
   edtvalorl.Text:= Valor;
 end;
 
+
 procedure TFrmAbastecimento.preencheDados;
 begin
   case cbbomba.ItemIndex of
@@ -88,6 +103,23 @@ begin
     2: passarDados('DIESEL','3,79');
     3: passarDados('DIESEL','3,79');
   end;
+end;
+
+function TFrmAbastecimento.Salvar:boolean;
+var
+  Abast: TAbastecimento;
+  Controller: TabastecimentoController;
+begin
+  Abast:= TAbastecimento.Create();
+  Controller:= TabastecimentoController.create();
+  Abast.valor:= valor;
+  Abast.icms:=icms;
+  Abast.IdBomba:= cbbomba.ItemIndex;
+  Abast.TotalIcms:= totalicms;
+  Abast.TotalGeral:= total;
+  Abast.Dt:= Date;
+  Abast.Litros:= litro;
+  Result:= Controller.Salvar(Abast);
 end;
 
 function TFrmAbastecimento.Validar: Boolean;
@@ -106,9 +138,10 @@ begin
       totgeral:= total + totalicms;
       edttotgeral.Text:=formatcurr('R$ ###,###,##0.00',
       (totgeral));
-       ShowMessage('Salvo');
-       edtlitro.SetFocus();
-      Result:= True;
+
+      Result:= Salvar();
+
+
     end
   else
     begin
