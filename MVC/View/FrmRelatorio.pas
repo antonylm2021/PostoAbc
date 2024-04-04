@@ -52,7 +52,6 @@ type
     ClientDataSet1ICMS: TFloatField;
     ClientDataSet1TOTALGERAL: TFloatField;
     ClientDataSet1LITROS: TFloatField;
-    procedure RLReport1BeforePrint(Sender: TObject; var PrintIt: Boolean);
   private
     { Private declarations }
   public
@@ -68,12 +67,5 @@ var
 implementation
 
 {$R *.dfm}
-
-procedure TRelatorio.RLReport1BeforePrint(Sender: TObject;
-  var PrintIt: Boolean);
-begin
-lli.Caption:= (ClientDataSet1tlitros.value);
-  ltot.Caption:= (ClientDataSet1total.value);
-end;
 
 end.

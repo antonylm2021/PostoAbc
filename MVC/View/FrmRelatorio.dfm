@@ -40,7 +40,6 @@ object Relatorio: TRelatorio
     Font.Name = 'Arial'
     Font.Style = []
     ShowExplosion = True
-    BeforePrint = RLReport1BeforePrint
     object RLBand1: TRLBand
       Left = 38
       Top = 38
@@ -322,7 +321,6 @@ object Relatorio: TRelatorio
       Origin = 'LITROS'
       ProviderFlags = []
       ReadOnly = True
-      currency = True
       Precision = 4
     end
   end

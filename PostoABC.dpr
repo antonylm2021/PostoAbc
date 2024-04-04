@@ -9,7 +9,8 @@ uses
   UfrmAbastecimento in 'MVC\View\UfrmAbastecimento.pas' {FrmAbastecimento},
   UfrmPrincipal in 'MVC\View\UfrmPrincipal.pas' {FrmPrincipal},
   Conexao in 'MVC\Dao\Conexao.pas',
-  AbastecimentoController in 'MVC\Controller\AbastecimentoController.pas';
+  AbastecimentoController in 'MVC\Controller\AbastecimentoController.pas',
+  FrmRelatorio in 'MVC\View\FrmRelatorio.pas' {Relatorio};
 
 {$R *.res}
 

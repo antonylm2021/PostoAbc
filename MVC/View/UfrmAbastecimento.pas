@@ -64,7 +64,7 @@ procedure TFrmAbastecimento.edtlitroKeyPress(Sender: TObject; var Key: Char);
 begin
   if(Key=#13) then
     if Validar() then
-      ShowMessage('abastecimento Realizado Com sucesso')
+      ShowMessage('Abastecimento Realizado Com sucesso')
     else
       ShowMessage('Erro ao abastecer');
 end;
@@ -82,7 +82,7 @@ end;
 procedure TFrmAbastecimento.Panel1Click(Sender: TObject);
 begin
   if Validar() then
-    ShowMessage('abastecimento Realizado Com sucesso')
+    ShowMessage('Abastecimento Realizado Com sucesso')
   else
     ShowMessage('Erro ao abastecer');
 
